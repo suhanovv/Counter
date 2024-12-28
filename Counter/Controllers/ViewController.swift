@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    @IBOutlet weak var counterValue: UILabel!
-    @IBOutlet weak var historyView: UITextView!
+    @IBOutlet weak private var counterValue: UILabel!
+    @IBOutlet weak private var historyView: UITextView!
     
     
     private var counter: Counter = CounterWithHistory(withInitial: 0)
@@ -25,18 +25,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func increment(_ sender: Any) {
+    @IBAction private func increment(_ sender: Any) {
         counter.increment()
         updateView()
     }
 
-    @IBAction func decrement(_ sender: Any) {
+    @IBAction private func decrement(_ sender: Any) {
         counter.decrement()
         updateView()
         
     }
     
-    @IBAction func reset(_ sender: Any) {
+    @IBAction private func reset(_ sender: Any) {
         counter.reset()
         updateView()
 
